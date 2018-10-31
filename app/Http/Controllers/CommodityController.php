@@ -22,16 +22,16 @@ class CommodityController extends Controller
         $minPrice=$request->get("minPrice");
 
 
-
+        //按关键字搜索
         if ($keyword!==null){
 
             $query->where("title","like","%{$keyword}%");
         }
-
+        //按分类搜索
         if ($cateId!==null){
             $query->where("goods_id",$cateId);
         }
-
+        //按价格区间搜索
         if ($maxPrice!=0 && $minPrice!=0){
             $query->where("price",">=","$minPrice");
             $query->where("price","<=","$maxPrice");

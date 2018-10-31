@@ -45,3 +45,4 @@ Route::get('/user/index','UserController@index')->name("user.index");
 Route::any('/user/zc','UserController@zc');
 Route::any('/user/edit/{id}','UserController@edit')->name("user.edit");
 Route::get('/user/del/{id}','UserController@del')->name("user.del");
+Route::any('/user/login/{id}','UserController@login')->name("user.login");
